@@ -47,7 +47,7 @@
     position: relative;
     background: url('iconframe.png') center/contain no-repeat;
     overflow: visible; 
-    margin-bottom: 40px; 
+    margin-bottom: 65px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,7 +253,56 @@
     text-shadow: none; 
 }
 
+.equipped-container {
+    position: absolute;
+    bottom: -60px; /* Adjust as needed for spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px; 
+    color: #00FF00; /* Default color */
+}
 
+.equipped-container input[type="checkbox"] {
+    margin-right: 8px; /* Space between checkbox and label */
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.equipped-container label {
+    cursor: pointer;
+}
+
+.equipped-container input[type="checkbox"]:not(:checked) ~ label {
+    color: red;
+}
+
+.equipped-container input[type="checkbox"]:not(:checked) ~ label ~ .text-frame input {
+    color: red;
+}
+
+.equipped-container label {
+    font-size: 14px;
+}
+
+.text-frame input.equipped {
+    color: #00FF00;
+}
+
+.text-frame input.not-equipped {
+    color: red;
+}
+
+.text-frame.equipped {
+    border-color: #00FF00;
+}
+
+.text-frame.not-equipped {
+    border-color: red;
+}
 .dropdown-content a[href="#none"] {
     display: none; 
 }
@@ -281,9 +330,14 @@
 </div>
 
 
-            <div class="text-frame">
-                <input type="text" value="$ 300" oninput="adjustTextSize(this)">
-            </div>
+           <div class="text-frame">
+    <input type="text" value="$ 300" oninput="adjustTextSize(this)">
+</div>
+
+<div class="equipped-container">
+    <input type="checkbox" id="equippedCheckbox" checked>
+    <label for="equippedCheckbox">Equipped</label>
+</div>
 
             <div class="shiny-image" id="shiny-image"></div>
         </div>
@@ -537,6 +591,24 @@ document.querySelectorAll('.dropdown-content a').forEach(option => {
         const selectedText = e.target.textContent.trim();
         updateLabelText(selectedText);
     });
+});
+
+document.getElementById('equippedCheckbox').addEventListener('change', function() {
+    const isChecked = this.checked;
+    const textFrame = document.querySelector('.text-frame');
+    const inputField = textFrame.querySelector('input');
+
+    if (isChecked) {
+        textFrame.classList.add('equipped');
+        textFrame.classList.remove('not-equipped');
+        inputField.classList.add('equipped');
+        inputField.classList.remove('not-equipped');
+    } else {
+        textFrame.classList.add('not-equipped');
+        textFrame.classList.remove('equipped');
+        inputField.classList.add('not-equipped');
+        inputField.classList.remove('equipped');
+    }
 });
 </script>
 
