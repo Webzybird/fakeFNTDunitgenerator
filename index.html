@@ -20,41 +20,42 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center; 
+            align-items: center; /* Center align content horizontally */
         }
 
-
+        /* Style for the title */
         h1 {
             font-size: 24px;
             margin: 20px 0;
             text-align: center;
         }
-        
+
+        /* Container for the image and buttons */
         .container {
             display: flex;
             flex-direction: column;
-            align-items: center; 
+            align-items: center; /* Center align content horizontally */
             margin-top: 50px;
             padding: 20px;
             position: relative;
             width: 100%;
-            max-width: 400px;
+            max-width: 400px; /* Limit the width to ensure proper alignment */
         }
 
-
+ /* Style for the image container */
 .image-container {
     width: 100%;
     height: 300px;
     position: relative;
     background: url('iconframe.png') center/contain no-repeat;
-    overflow: visible; 
-    margin-bottom: 40px;
+    overflow: visible; /* Allow children to overflow */
+    margin-bottom: 40px; /* Increased margin at the bottom */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-        
+        /* Gradient overlay for the frame image */
         .gradient-overlay {
             position: absolute;
             top: 0;
@@ -63,32 +64,32 @@
             height: 100%;
             background: transparent;
             mix-blend-mode: multiply;
-            z-index: 1; 
+            z-index: 1; /* Ensure gradient is behind the imported image */
         }
 
-        
+        /* Wrapper for the imported image */
         .imported-image-wrapper {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 86.5%; 
+            width: 86.5%; /* Fit the image to 80% of the icon */
             height: 86.5%;
-            transform: translate(-50%, -50%); 
+            transform: translate(-50%, -50%); /* Center the image */
             display: flex;
             align-items: center;
             justify-content: center;
-            pointer-events: none; 
-            z-index: 2; 
+            pointer-events: none; /* Ensure the imported image is not clickable */
+            z-index: 2; /* Ensure imported image is on top of the gradient */
         }
 
         .imported-image-wrapper img {
-            width: 100%; 
-            height: 100%; 
-            object-fit: contain; 
+            width: 100%; /* Fit to the wrapper width */
+            height: 100%; /* Fit to the wrapper height */
+            object-fit: contain; /* Maintain aspect ratio and fit inside */
             display: block;
         }
 
-
+        /* Style for the buttons */
         button {
             width: 200px;
             padding: 10px;
@@ -98,11 +99,11 @@
             border: none;
             cursor: pointer;
             font-family: 'Press Start 2P', cursive;
-            border-radius: 8px; 
+            border-radius: 8px; /* Slightly rounded corners */
             transition: opacity 0.3s;
         }
 
-
+        /* Button colors */
         .uncommon {
             background: linear-gradient(to top, #11ff00, #baff6b);
         }
@@ -127,16 +128,17 @@
             background: linear-gradient(to top, #591991, #210b32);
         }
 
+        /* New Shiny button style */
         .shiny {
             background: linear-gradient(to top, #ff0000, #ff7300, #ffee00, #11ff00, #00c3ff, #d400ff);
         }
 
-        
+        /* Hover effect for buttons */
         button:hover {
             opacity: 0.8;
         }
 
-     
+        /* Style for the import button */
         .import-button {
             width: 120px;
             padding: 8px;
@@ -145,10 +147,10 @@
             background-color: grey;
             border: none;
             cursor: pointer;
-            font-family: 'Source Sans Pro', sans-serif; 
-            border-radius: 8px; 
+            font-family: 'Source Sans Pro', sans-serif; /* Change to Source Sans Pro */
+            border-radius: 8px; /* Slightly rounded corners */
             transition: opacity 0.3s;
-            z-index: 3; 
+            z-index: 3; /* Ensure import button is above all elements */
         }
 
         /* Hover effect for import button */
@@ -159,49 +161,50 @@
         /* New frame for editable text */
         .text-frame {
             position: absolute;
-            bottom: -24px; 
+            bottom: -24px; /* Offset it correctly down */
             left: 50%;
             transform: translateX(-50%);
             width: 56%; /* Reduced width */
-            height: 80px; 
-            border: 8px solid #00FF00; 
-            background-color: black; 
+            height: 80px; /* Adjust height as needed */
+            border: 8px solid #00FF00; /* Slightly thicker green border */
+            background-color: black; /* Black background */
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 10; 
-            overflow: hidden; 
-            padding: 0 10px; 
-            box-sizing: border-box; 
+            z-index: 10; /* Ensure it is above the gradient and imported image */
+            overflow: hidden; /* Hide overflow to prevent text from spilling */
+            padding: 0 10px; /* Add inward padding to the sides */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
 
         .text-frame input {
             background: transparent;
             border: none;
-            color: #00FF00; 
-            font-family: 'Press Start 2P', cursive; 
+            color: #00FF00; /* Green text color */
+            font-family: 'Press Start 2P', cursive; /* Use Press Start 2P */
             text-align: center;
             width: 100%;
             height: 100%;
             box-sizing: border-box;
-            font-size: 26px; 
-            line-height: 60px; 
-            resize: none; 
+            font-size: 26px; /* Initial font size */
+            line-height: 60px; /* Adjust based on the height of the frame */
+            resize: none; /* Prevent manual resizing */
             text-shadow: 
                 4px 4px 0 rgb(10, 9, 31),
                 -4px -4px 0 rgb(10, 9, 31),
                 4px -4px 0 rgb(10, 9, 31),
-                -4px 4px 0 rgb(10, 9, 31); 
+                -4px 4px 0 rgb(10, 9, 31); /* 4px thick text stroke effect */
         }
 
+        /* Style for the note under the import button */
         .import-note {
-            font-family: 'Source Sans Pro', sans-serif; 
+            font-family: 'Source Sans Pro', sans-serif; /* Same font as the import button */
             font-size: 12px;
             color: white;
             margin-top: 5px;
         }
 
-        
+        /* New style for the shiny image */
         .shiny-image {
             position: absolute;
             top: 0;
@@ -209,9 +212,56 @@
             width: 100%;
             height: 100%;
             background: url('shiny.png') center/contain no-repeat;
-            z-index: 4; 
-            display: none; 
+            z-index: 9; /* Ensure it is above everything else */
+            display: none; /* Hidden by default */
         }
+.label-frame #label-text {
+    color: #FFFFFF; /* White text color */
+    font-family: 'Press Start 2P', cursive; /* Use Press Start 2P */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-shadow:
+        4px 4px 0 rgb(10, 9, 31),
+        -4px -4px 0 rgb(10, 9, 31),
+        4px -4px 0 rgb(10, 9, 31),
+        -4px 4px 0 rgb(10, 9, 31); /* 4px thick text stroke effect */
+    line-height: 1.5; /* Line height, adjust as needed */
+    display: none; /* Hidden by default */
+    position: relative; /* Ensure text-shadow is properly applied */
+    z-index: 8; /* Ensure it is above background gradient but below other content if necessary */
+}
+
+.label-frame {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    text-align: center;
+    z-index: 7; /* Ensure it is above other elements */
+}
+
+.label-frame #label-text2 {
+    color: #FFFFFF; /* White text color */
+    font-family: 'Press Start 2P', cursive; /* Use Press Start 2P */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Bold text */
+    line-height: 1.5; /* Line height, adjust as needed */
+    display: none; /* Hidden by default */
+    position: absolute;
+    z-index: 9; /* Ensure it is above label-text */
+    top: 0; 
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-shadow: none; /* No text shadow */
+}
+
+
+/* Style for the dropdown content when the "None" button is clicked */
+.dropdown-content a[href="#none"] {
+    display: none; /* Ensure "None" option does not show in dropdown */
+}
     </style>
 </head>
 <body>
@@ -232,6 +282,11 @@
                 <!-- Imported image will be displayed here -->
             </div>
             <div class="gradient-overlay" id="gradient-overlay"></div>
+		<!-- New text label at the top of the iconframe -->
+<div class="label-frame" id="label-frame">
+    <span id="label-text">Select Enchantment</span>
+    <span id="label-text2">Select Enchantment</span> <!-- New label without shadow -->
+</div>
 
             <!-- Add text frame with default text -->
             <div class="text-frame">
@@ -250,6 +305,81 @@
         <button class="secret" onclick="setGradient('secret')">Secret</button>
         <button class="nightmare" onclick="setGradient('nightmare')">Nightmare</button>
         <button class="shiny" onclick="setGradient('shiny')">Shiny</button>
+<!-- Dropdown for adding enchantments -->
+<div class="dropdown-container">
+    <button class="dropdown-button">Add Enchant</button>
+    <div class="dropdown-content">
+	<a href="#" id="none">None</a>
+	<a href="#" id="damageI">Damage I</a>
+	<a href="#" id="damageII">Damage II</a>
+	<a href="#" id="damageIII">Damage III</a>
+	<a href="#" id="rangeI">Range I</a>
+	<a href="#" id="rangeII">Range II</a>
+	<a href="#" id="rangeIII">Range III</a>
+	<a href="#" id="speedI">Speed I</a>
+	<a href="#" id="speedII">Speed II</a>
+	<a href="#" id="speedIII">Speed III</a>
+	<a href="#" id="withered">Withered</a>
+	<a href="#" id="bossKiller">BOSS KILLER</a>
+	<a href="#" id="puppetsNightmare">PUPPETS NIGHTMARE</a>
+	<a href="#" id="bounded">Bounded</a>
+	<a href="#" id="shadow">Shadow</a>
+	<a href="#" id="vengeance">VENGEANCE</a>
+    </div>
+</div>
+
+<style>
+    /* Style for the dropdown container */
+    .dropdown-container {
+        position: relative;
+        display: inline-block;
+        margin-top: 10px; /* Add spacing from the buttons above */
+    }
+
+    /* Style for the dropdown button */
+    .dropdown-button {
+        width: 200px;
+        padding: 10px;
+        font-size: 14px;
+        color: white;
+        background-color: grey;
+        border: none;
+        cursor: pointer;
+        font-family: 'Press Start 2P', cursive;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    /* Style for the dropdown content */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: black;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 8px;
+    }
+
+    /* Style for each dropdown link */
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Press Start 2P', cursive;
+    }
+
+    /* Change color on hover */
+    .dropdown-content a:hover {
+        background-color: #555;
+    }
+
+    /* Show the dropdown on button hover */
+    .dropdown-container:hover .dropdown-content {
+        display: block;
+    }
+</style>
     </div>
 
     <script>
@@ -320,11 +450,92 @@
         }
 
         // Adjust text size on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const input = document.querySelector('.text-frame input');
-            adjustTextSize(input);
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.querySelector('.text-frame input');
+        adjustTextSize(input);
+    });
+
+function updateLabelText(text, direction = "to top") {
+    const labelText = document.getElementById('label-text');
+    const labelText2 = document.getElementById('label-text2'); // Second label without shadow
+    
+    const fontSizeMap = {
+        "None": 24, // Default font size when "None" is selected
+        "Damage I": 30,
+        "Damage II": 30,
+        "Damage III": 32,
+        "Range I": 30,
+        "Range II": 30,
+        "Range III": 30,
+        "Speed I": 30,
+        "Speed II": 30,
+        "Speed III": 30,
+        "Withered": 36,
+        "BOSS KILLER": 32,
+        "PUPPETS NIGHTMARE": 32,
+        "Bounded": 38,
+        "Shadow": 46,
+        "VENGEANCE": 32
+    };
+
+    const gradientMap = {
+        "None": "",
+        "Damage I": `linear-gradient(${direction}, #ff181c, #ff8183)`,
+        "Damage II": `linear-gradient(${direction}, #ff181c, #ff8183)`,
+        "Damage III": `linear-gradient(${direction}, #ff181c, #ff8183)`,
+        "Range I": `linear-gradient(${direction}, #2e31ff, #72f1ff)`,
+        "Range II": `linear-gradient(${direction}, #2e31ff, #72f1ff)`,
+        "Range III": `linear-gradient(${direction}, #2e31ff, #72f1ff)`,
+        "Speed I": `linear-gradient(${direction}, #f7971e, #ffd200)`,
+        "Speed II": `linear-gradient(${direction}, #f7971e, #ffd200)`,
+        "Speed III": `linear-gradient(${direction}, #f7971e, #ffd200)`,
+        "Withered": `linear-gradient(${direction}, #79213d, #ff8ab7)`,
+        "BOSS KILLER": `linear-gradient(${direction}, #b31aff, #f45eff)`,
+        "PUPPETS NIGHTMARE": `linear-gradient(to right, #5d2c87, #aec6ff)`,
+        "Bounded": `linear-gradient(to right, #53fd9a, #27e22f)`,
+        "Shadow": `linear-gradient(${direction}, #161a2b, #9caade)`,
+        "VENGEANCE": `linear-gradient(${direction}, #fd4800, #e23f16)`
+    };
+
+    const fontSize = fontSizeMap[text] || 24;
+    const gradient = gradientMap[text] || "";
+
+    // Apply the styles to labelText
+    labelText.textContent = text;
+    labelText.style.fontSize = fontSize + "px";
+    labelText.style.backgroundImage = gradient;
+    labelText.style.webkitBackgroundClip = "text";
+    labelText.style.webkitTextFillColor = "transparent";
+    labelText.style.display = 'block';
+
+    // Apply the styles to labelText2
+    labelText2.textContent = text;
+    labelText2.style.fontSize = fontSize + "px";
+    labelText2.style.backgroundImage = gradient;
+    labelText2.style.webkitBackgroundClip = "text";
+    labelText2.style.webkitTextFillColor = "transparent";
+    labelText2.style.display = 'block'; // Make it visible
+}
+
+
+// Add event listener to dropdown links
+document.querySelectorAll('.dropdown-content a').forEach(option => {
+    option.addEventListener('click', (e) => {
+        e.preventDefault();
+        const selectedText = e.target.textContent.trim();
+        updateLabelText(selectedText);
+    });
+});
+
+// Add event listener to dropdown links
+document.querySelectorAll('.dropdown-content a').forEach(option => {
+    option.addEventListener('click', (e) => {
+        e.preventDefault();
+        const selectedText = e.target.textContent.trim();
+        updateLabelText(selectedText);
+    });
+});
+</script>
 
 </body>
 </html>
