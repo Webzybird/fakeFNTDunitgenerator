@@ -9,6 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -29,17 +30,176 @@
         }
 
   
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-            margin-top: 50px;
-            padding: 20px;
-            position: relative;
-            width: 100%;
-            max-width: 400px; 
-        }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 50px;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    max-width: 400px; 
+    margin-left: 450px; 
+}
+.stat-frame-container {
+    position: absolute;
+    top: 40%; 
+    left: 26%; 
+    transform: translateY(-50%); 
+    width: 450px;
+    height: 400px; 
+    background: url('statframe.png') center/contain no-repeat;
+}
+stat-frame {
+  display: flex;
+  justify-content: center; 
+  align-items: left; 
+  margin-left: 10%; 
+}
+.stat-box-container {
+  margin-top: 130px; 
+}
 
+.centered-stat-box-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+
+}
+
+.centered-stat-textbox {
+  background-color: transparent;
+  color: #FFFFFF;
+  font-family: 'Silkscreen', sans-serif;
+  font-size: 36px;
+  width: 330px; 
+  height: 50px; 
+  padding: 0px;
+  border: none;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 50px; 
+}
+
+.exist-count-textbox-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 145%);
+
+}
+
+.exist-count-textbox {
+  background-color: transparent;
+  color: #FFFFFF;
+  font-family: 'Silkscreen', sans-serif;
+  font-size: 36px;
+  width: 230px; 
+  height: 50px; 
+  padding: 0px;
+  border: none;
+  resize: none;
+  font-weight: bold;
+  overflow: hidden;
+  outline: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 50px; 
+}
+
+
+.rarity-stat {
+  margin-top: -5px; 
+  font-family: 'Silkscreen', sans-serif;
+  font-size: 26px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.stat-textbox {
+  background-color: transparent;  
+  color: #FFFFFF;            
+  font-family: 'Silkscreen', sans-serif;
+  font-size: 24px;
+  width: 360px;            
+  height: 20px;
+  margin-left: 24px;
+  margin-bottom: -10px;  
+  padding: 10px;        
+  border: none;         
+  line-height: 20px;
+  resize: none;    
+  overflow: hidden;   
+  white-space: nowrap;
+  outline: none;    
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+  text-align: left; 
+}
+
+#stat-box1 {
+  color: #ffd500; 
+}
+
+#stat-box2 {
+  color: #ff0000;
+}
+
+#stat-box3 {
+  color: #0091ff;
+}
+
+#stat-box4 {
+  color: #99b6d5; 
+}
+
+.equipped-button {
+    width: 50%;
+	height: 70px;
+    padding: 0px;
+    font-size: 36px;
+    color: #0088ff;
+    border: 8px solid #0088ff; 
+    background-color: #000000;
+    border-radius: 0; 
+    font-family: 'Silkscreen', sans-serif;
+    font-weight: bold; 
+    text-align: center; 
+	transform: translateY(10%);
+	margin-left: 48px;
+    position: absolute;
+    bottom: 0;
+    left: -10;
+}
+
+.equipped-button:hover {
+    opacity: 1; 
+}
+
+.delete-icon-container {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(150%);
+    width: 70px; 
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-icon-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
 .image-container {
     width: 100%;
@@ -47,7 +207,7 @@
     position: relative;
     background: url('iconframe.png') center/contain no-repeat;
     overflow: visible; 
-    margin-bottom: 65px; 
+    margin-bottom: 40px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,56 +413,7 @@
     text-shadow: none; 
 }
 
-.equipped-container {
-    position: absolute;
-    bottom: -60px; /* Adjust as needed for spacing */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px; 
-    color: #00FF00; /* Default color */
-}
 
-.equipped-container input[type="checkbox"] {
-    margin-right: 8px; /* Space between checkbox and label */
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.equipped-container label {
-    cursor: pointer;
-}
-
-.equipped-container input[type="checkbox"]:not(:checked) ~ label {
-    color: red;
-}
-
-.equipped-container input[type="checkbox"]:not(:checked) ~ label ~ .text-frame input {
-    color: red;
-}
-
-.equipped-container label {
-    font-size: 14px;
-}
-
-.text-frame input.equipped {
-    color: #00FF00;
-}
-
-.text-frame input.not-equipped {
-    color: red;
-}
-
-.text-frame.equipped {
-    border-color: #00FF00;
-}
-
-.text-frame.not-equipped {
-    border-color: red;
-}
 .dropdown-content a[href="#none"] {
     display: none; 
 }
@@ -330,14 +441,9 @@
 </div>
 
 
-           <div class="text-frame">
-    <input type="text" value="$ 300" oninput="adjustTextSize(this)">
-</div>
-
-<div class="equipped-container">
-    <input type="checkbox" id="equippedCheckbox" checked>
-    <label for="equippedCheckbox">Equipped</label>
-</div>
+            <div class="text-frame">
+                <input type="text" value="$ 300" oninput="adjustTextSize(this)">
+            </div>
 
             <div class="shiny-image" id="shiny-image"></div>
         </div>
@@ -424,46 +530,112 @@
     }
 </style>
     </div>
-
+<div class="stat-frame-container">
+    <div class="stat-frame">
+        <div class="stat-box-container">
+            <textarea class="stat-textbox" id="stat-box1" oninput="adjustTextSize(this)" spellcheck="false">Type: Single</textarea>
+            <textarea class="stat-textbox" id="stat-box2" oninput="adjustTextSize(this)" spellcheck="false">Damage: 20-30</textarea>
+            <textarea class="stat-textbox" id="stat-box3" oninput="adjustTextSize(this)" spellcheck="false">Range: 10-15</textarea>
+            <textarea class="stat-textbox" id="stat-box4" oninput="adjustTextSize(this)" spellcheck="false">Cooldown: 1-0.75</textarea>
+        </div>
+        <div class="centered-stat-box-container">
+            <textarea class="centered-stat-textbox" oninput="adjustTextSize(this)" spellcheck="false">Unit Name</textarea>
+            <div class="rarity-stat">Common</div>
+        </div>
+		<div class="exist-count-textbox-container">
+            <textarea class="exist-count-textbox" oninput="adjustTextSize(this)" spellcheck="false">35 Exists</textarea>
+        </div>
+		 <button class="equipped-button">Unequip</button>
+		 <div class="delete-icon-container">
+    <img src="deleteicon.png" alt="Delete Icon">
+</div>
+    </div>
+</div>
     <script>
-        function setGradient(rarity) {
-            const gradientOverlay = document.getElementById('gradient-overlay');
-            const shinyImage = document.getElementById('shiny-image');
-            
-            switch (rarity) {
-                case 'uncommon':
-                    gradientOverlay.style.background = 'linear-gradient(to top, #11ff00, #baff6b)';
-                    shinyImage.style.display = 'none'; 
-                    break;
-                case 'rare':
-                    gradientOverlay.style.background = 'linear-gradient(to top, #0066ff, #0fd7ff)';
-                    shinyImage.style.display = 'none'; 
-                    break;
-                case 'epic':
-                    gradientOverlay.style.background = 'linear-gradient(to top, #8c00ff, #d950ff)';
-                    shinyImage.style.display = 'none'; 
-                    break;
-                case 'mythic':
-                    gradientOverlay.style.background = 'linear-gradient(to top, #f7971e, #ffd200)';
-                    shinyImage.style.display = 'none'; 
-                    break;
-                case 'secret':
-                    gradientOverlay.style.background = 'linear-gradient(to top, #ff181c, #ff8183)';
-                    shinyImage.style.display = 'none'; 
-                    break;
-                case 'nightmare':
-                    gradientOverlay.style.background = 'linear-gradient(to top, #591991, #210b32)';
-                    shinyImage.style.display = 'none'; 
-                    break;
-                case 'shiny':
-                    gradientOverlay.style.background = 'linear-gradient(to top, #ff0000, #ff7300, #ffee00, #11ff00, #00c3ff, #d400ff)';
-                    shinyImage.style.display = 'block'; 
-                    break;
-                default:
-                    gradientOverlay.style.background = 'none';
-                    shinyImage.style.display = 'none';
-            }
-        }
+
+const initialRarityText = document.querySelector('.rarity-stat').textContent;
+const initialGradient = getComputedStyle(document.querySelector('.rarity-stat')).background;
+
+function setGradient(rarity) {
+    const gradientOverlay = document.getElementById('gradient-overlay');
+    const shinyImage = document.getElementById('shiny-image');
+    const rarityStat = document.querySelector('.rarity-stat');
+
+    let currentGradient;
+    let currentGradient2;
+    let currentText;
+
+    if (rarityStat.style.backgroundClip === 'text') {
+        currentGradient = gradientOverlay.style.background;
+        currentGradient2 = rarityStat.style.background;
+        currentText = rarityStat.textContent;
+    }
+
+    let gradient;
+    let gradient2;
+    let rarityText;
+
+       switch (rarity) {
+        case 'uncommon':
+            gradient = 'linear-gradient(to top, #11ff00, #baff6b)';
+			gradient2 = 'linear-gradient(to top, #81A522, #31A509)';
+            rarityText = 'Uncommon';
+			shinyImage.style.display = 'none'; 
+            break;
+        case 'rare':
+            gradient = 'linear-gradient(to top, #0066ff, #0fd7ff)';
+			gradient2 = 'linear-gradient(to top, #0A7378, #025078)';
+            rarityText = 'Rare';
+			shinyImage.style.display = 'none'; 
+            break;
+        case 'epic':
+            gradient = 'linear-gradient(to top, #8c00ff, #d950ff)';
+			gradient2 = 'linear-gradient(to top, #BF2378, #9B0A78)';
+            rarityText = 'Epic';
+			shinyImage.style.display = 'none'; 
+            break;
+        case 'mythic':
+            gradient = 'linear-gradient(to top, #f7971e, #ffd200)';
+			gradient2 = 'linear-gradient(to top, #FF8E14, #FF7B06)';
+            rarityText = 'Mythic';
+			shinyImage.style.display = 'none'; 
+            break;
+        case 'secret':
+            gradient = 'linear-gradient(to top, #ff181c, #ff8183)';
+			gradient2 = 'linear-gradient(to top, #FF3D2E, #FF1D16)';
+            rarityText = 'Secret';
+			shinyImage.style.display = 'none'; 
+            break;
+        case 'nightmare':
+            gradient = 'linear-gradient(to top, #591991, #210b32)';
+			gradient2 = 'linear-gradient(to top, #330A26, #4E0F3C)';
+            rarityText = 'Nightmare';
+			shinyImage.style.display = 'none'; 
+            break;
+        case 'shiny':
+
+              gradient = 'linear-gradient(to top, #ff0000, #ff7300, #ffee00, #11ff00, #00c3ff, #d400ff)';
+            gradient2 = currentGradient2 || 'linear-gradient(to top, #ff0000, #ff7300, #ffee00, #11ff00, #00c3ff, #d400ff)';
+            rarityText = currentText || 'Shiny';
+            shinyImage.style.display = 'block'; 
+            break;
+        default:
+            gradient = 'none';
+            gradient2 = 'none';
+            rarityText = '';
+            shinyImage.style.display = 'none';
+    }
+
+    gradientOverlay.style.background = gradient;
+    rarityStat.style.background = gradient2; 
+    
+
+    rarityStat.style.backgroundClip = 'text';
+    rarityStat.style.webkitBackgroundClip = 'text';
+    rarityStat.style.color = 'transparent';
+
+    rarityStat.textContent = rarityText; 
+}
 
         function loadImage(event) {
             const reader = new FileReader();
@@ -474,20 +646,38 @@
             reader.readAsDataURL(event.target.files[0]);
         }
 
-        function adjustTextSize(input) {
-            const frame = input.parentElement;
-            const frameWidth = frame.offsetWidth;
-            const frameHeight = frame.offsetHeight;
+ function adjustTextSize(input) {
+    const frame = input.parentElement;
+    const frameWidth = frame.offsetWidth;
+    const frameHeight = frame.offsetHeight;
 
-            let fontSize = 30; // Initial font size
-            input.style.fontSize = fontSize + 'px';
 
-            while (input.scrollWidth > frameWidth -32 || input.scrollHeight > frameHeight) {
-                fontSize--;
-                input.style.fontSize = fontSize + 'px';
-                if (fontSize <= 10) break; 
-            }
-        }
+    let fontSize;
+    let widthAdjustment;
+    
+    if (input.classList.contains('centered-stat-textbox')) {
+        fontSize = 36; 
+        widthAdjustment = 0;
+    } else if (input.classList.contains('stat-textbox')) {
+        fontSize = 24; 
+        widthAdjustment = 67; 
+	  } else if (input.classList.contains('exist-count-textbox')) {
+        fontSize = 36; 
+        widthAdjustment = 0;
+    } else {
+        fontSize = 26;
+        widthAdjustment = 32;
+    }
+
+    input.style.fontSize = fontSize + 'px';
+
+
+    while (input.scrollWidth > frameWidth - widthAdjustment || input.scrollHeight > frameHeight) {
+        fontSize--;
+        input.style.fontSize = fontSize + 'px';
+        if (fontSize <= 10) break;
+    }
+}
 
     document.addEventListener('DOMContentLoaded', () => {
         const input = document.querySelector('.text-frame input');
@@ -593,23 +783,27 @@ document.querySelectorAll('.dropdown-content a').forEach(option => {
     });
 });
 
-document.getElementById('equippedCheckbox').addEventListener('change', function() {
-    const isChecked = this.checked;
-    const textFrame = document.querySelector('.text-frame');
-    const inputField = textFrame.querySelector('input');
-
-    if (isChecked) {
-        textFrame.classList.add('equipped');
-        textFrame.classList.remove('not-equipped');
-        inputField.classList.add('equipped');
-        inputField.classList.remove('not-equipped');
-    } else {
-        textFrame.classList.add('not-equipped');
-        textFrame.classList.remove('equipped');
-        inputField.classList.add('not-equipped');
-        inputField.classList.remove('equipped');
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const input = document.querySelector('.text-frame input');
+    adjustTextSize(input);
+    
+    const equipButton = document.querySelector('.equipped-button');
+    let isEquipped = false; 
+    
+    equipButton.addEventListener('click', () => {
+        isEquipped = !isEquipped; 
+        if (isEquipped) {
+            equipButton.textContent = 'Equip';
+            document.querySelector('.text-frame').style.borderColor = '#FF0000'; 
+			document.querySelector('.text-frame input').style.color = '#FF0000'; 
+        } else {
+            equipButton.textContent = 'Unequip';
+            document.querySelector('.text-frame input').style.color = '#00FF00';
+            document.querySelector('.text-frame').style.borderColor = '#00FF00'; 
+        }
+    });
 });
+
 </script>
 
 </body>
