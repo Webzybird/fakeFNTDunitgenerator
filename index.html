@@ -804,6 +804,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+if (isMobileDevice()) {
+    window.location.href = 'https://webzybird.github.io/fakeFNTDunitgeneratorMOBILE/';
+}
+
 </script>
 
 </body>
