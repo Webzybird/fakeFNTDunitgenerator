@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webzybird's Fake Unit Generator</title>
-   <!-- ZYtfKugfCZwG -->
 	<link rel="icon" type="image/png" href="favicon.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -282,6 +281,10 @@ stat-frame {
         .nightmare {
             background: linear-gradient(to top, #591991, #210b32);
         }
+		
+		 .apex {
+            background: linear-gradient(to top, #D3114F, #8024F4);
+        }
 
 
         .shiny {
@@ -455,9 +458,10 @@ stat-frame {
         <button class="mythic" onclick="setGradient('mythic')">Mythic</button>
         <button class="secret" onclick="setGradient('secret')">Secret</button>
         <button class="nightmare" onclick="setGradient('nightmare')">Nightmare</button>
+		<button class="apex" onclick="setGradient('apex')">APEX</button>
 		<!-- ZYtfKugfCZwG
 		
-		Search the grounds of creativity
+		Search the grounds of creativity for a final essential.
 
 		-->
         <button class="shiny" onclick="setGradient('shiny')">Shiny</button>
@@ -556,6 +560,11 @@ stat-frame {
 </div>
     </div>
 </div>
+
+<div class="transparent-text">
+    ZYtfKugfCZwG - This is the last half of your key! There's one more input to reveal the cipher. Search the past of the grounds of creativity for your final essential.
+</div>
+
     <script>
 
 const initialRarityText = document.querySelector('.rarity-stat').textContent;
@@ -615,6 +624,12 @@ function setGradient(rarity) {
             gradient = 'linear-gradient(to top, #591991, #210b32)';
 			gradient2 = 'linear-gradient(to top, #330A26, #4E0F3C)';
             rarityText = 'Nightmare';
+			shinyImage.style.display = 'none'; 
+            break;
+		case 'apex':
+            gradient = 'linear-gradient(to top, #D3114F, #8024F4)';
+			gradient2 = 'linear-gradient(to top, #CE082C, #B5158C)';
+            rarityText = 'Apex';
 			shinyImage.style.display = 'none'; 
             break;
         case 'shiny':
